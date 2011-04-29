@@ -1,0 +1,9 @@
+== Ruby tradutor
+Ruby tradutor is a command line tool that uses Google translate API to translate texts.
+
+== Install
+Just put your Google Translate API key into config.rb
+If you don't have one, access https://code.google.com/apis/console to generate one
+
+== Usage
+Just run rtradutor passing 3 parameters [query text] [source language] [target language]

@@ -1,0 +1,1 @@
+GOOGLE_TRANSLATE_KEY = 'AIzaSyDAOU6td-dt_hhwYgH0jFtd6GgFpJu-02s';

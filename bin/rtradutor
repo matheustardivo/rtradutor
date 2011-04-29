@@ -1,0 +1,21 @@
+#!/Users/matheustardivo/.rvm/rubies/ruby-1.9.2-p180/bin/ruby
+
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'optparse'
+require 'tradutor'
+
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: rtradutor [query] [source] [target]"
+end.parse!
+
+raise "Invalid parameters. Usage: rtradutor [query text] [source language] [target language]" if ARGV.length != 3
+
+@tradutor = Tradutor.new
+@tradutor.validate_languages(ARGV[1], ARGV[2])
+p '>> ' + @tradutor.translate({
+  :q => ARGV[0], 
+  :source => ARGV[1], 
+  :target => ARGV[2]})
