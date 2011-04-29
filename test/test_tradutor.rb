@@ -21,4 +21,20 @@ class TestTradutor < Test::Unit::TestCase
         :source => "pt", 
         :target => "en"}).downcase)
   end
+  
+  def test_valid_languages
+    assert_nothing_raised do
+      @tradutor.validate_languages("pt", "en")
+    end
+    
+    assert_nothing_raised do
+      @tradutor.validate_languages("es", "fr")
+    end
+  end
+  
+  def test_invalid_languages
+    assert_raise(RuntimeError, LoadError) do
+      @tradutor.validate_languages("xpto", "abcd")
+    end
+  end
 end
